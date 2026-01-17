@@ -17,7 +17,7 @@ int main()
 
 
     //Downloading Script
-    system("curl -s -L -o \"%systemdrive%\\Windows\\XHCI-IMOD-Interval.ps1\" \"https://www.dropbox.com/scl/fi/uvlrqgtfxhp1b106qhr62/Disable-IMOD-By-Max.bat?rlkey=cfqu7k3pnrof4z0a9wbvji1u3&st=92lt9de6&dl=1\"");
+    system("curl -s -L -o \"%systemdrive%\\Windows\\XHCI-IMOD-Interval.ps1\" \"https://www.dropbox.com/scl/fi/u41vr10hs3n0t8iaxt31y/XHCI-IMOD-Interval.ps1?rlkey=hx845y0br7ij7runsyosaltns&st=7wjevswi&dl=1\"");
 
 
     //Downloading Loader
