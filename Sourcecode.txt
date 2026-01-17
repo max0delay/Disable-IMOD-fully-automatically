@@ -1,0 +1,44 @@
+#include <iostream>
+#include <windows.h>
+using namespace std;
+
+
+int main()
+{
+    system("mode con cols=95 lines=45");  //Mode
+
+
+    SetConsoleTitleW(L"Disable IMOD - By Max");  //Title
+
+    cout << "\nDownloading Resources...\n\n";
+
+    //Downloading RWEverything
+    system("curl -s -L -o \"%Temp%\\RWeverything.exe\" \"https://www.dropbox.com/scl/fi/ygqt17fm5h18urcw0x56t/SetupRwX64.exe?rlkey=jh1r7uq60ok7bpmaspm4677ws&st=dwlfdsky&dl=1\"");
+
+
+    //Downloading Script
+    system("curl -s -L -o \"%systemdrive%\\Windows\\XHCI-IMOD-Interval.ps1\" \"https://www.dropbox.com/scl/fi/uvlrqgtfxhp1b106qhr62/Disable-IMOD-By-Max.bat?rlkey=cfqu7k3pnrof4z0a9wbvji1u3&st=92lt9de6&dl=1\"");
+
+
+    //Downloading Loader
+    system("curl -s -L -o \"%ProgramData%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\Disable IMOD - By Max.bat\" \"https://www.dropbox.com/scl/fi/gx22trxqnptzh72j9g3oz/Disable-IMOD-By-Max.bat?rlkey=12x4rlu74uva4cipvi12r5t5x&st=z9setf7r&dl=1\"");
+
+
+    // Install RWEverything
+    system("\"%Temp%\\RWEverything.exe\" /silent");
+
+
+    //delete the RWEverything
+    system("del /f /q \"%TEMP%\\RWEverything.exe\"");
+
+
+    //RWEverything fix
+    system("reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\CI\\Config\" /v \"VulnerableDriverBlocklistEnable\" /t REG_DWORD /d \"0\" /f >nul 2>&1");
+
+
+
+    cout << "\n\nRestart your pc, and let the magic begin!\n";
+    cout << "Press a key to exit the File...";
+    system("pause >nul");
+    return 0;
+}
